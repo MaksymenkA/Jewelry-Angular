@@ -1,0 +1,343 @@
+::ng-deep ngb-carousel .carousel-indicators {
+  display: none !important;
+  outline: none;
+}
+
+::ng-deep ngb-carousel {
+  outline: none;
+  transition: 1s ease;
+}
+::ng-deep .carousel-item {
+  transition: 1s ease;
+  animation: fade3 1s linear;
+}
+@keyframes fade3 {
+  0% {
+    opacity: 0.5;
+  }
+  33.333% {
+    opacity: 0.5;
+  }
+  66.666% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slider-content {
+  width: 500px;
+  font-family: "Montserrat", Sans-serif;
+}
+#first-slide .slider-content {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-15%, -40%);
+}
+#second-slide .slider-content {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  /* transform: translate(30%, 30%); */
+}
+#third-slide .slider-content {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  transform: translate(-20%, -40%);
+  text-align: center;
+}
+.slider-content h1 {
+  font-size: 46px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px !important;
+}
+#first-slide img,
+#third-slide img,
+#second-slide img {
+  transform: scale(1.1);
+  min-height: 450px;
+  object-fit: cover;
+}
+.slider-content button,
+.text-block button {
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  color: black;
+  padding: 18px 41px 18px 41px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.slider-content button:hover,
+.text-block button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s linear;
+}
+
+@media screen and (max-width: 1020px) {
+  .slider-content h1 {
+    font-size: 28px;
+  }
+  .slider-content p {
+    font-size: 14px;
+  }
+  .slider-content {
+    width: 350px;
+  }
+  #first-slide .slider-content {
+    top: 50%;
+    right: 10%;
+    transform: translate(0%, -46%);
+  }
+
+  #third-slide .slider-content {
+    top: 43%;
+    transform: translate(-24%, -40%);
+  }
+}
+@media screen and (max-width: 710px) {
+  #first-slide .slider-content,
+  #second-slide .slider-content,
+  #third-slide .slider-content {
+    text-align: center;
+    left: 0;
+    top: 30%;
+    right: 0;
+    transform: none;
+    width: 80%;
+    margin: auto;
+  }
+  #first-slide img,
+  #third-slide img,
+  #second-slide img {
+    transform: scale(1);
+  }
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  position: relative;
+}
+.categories img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 450px;
+}
+.categories h4 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-transform: uppercase;
+  color: black;
+  width: 80%;
+  letter-spacing: 1.3px;
+}
+
+.categories h4:after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  left: 0;
+  transition: 1s ease;
+  padding-top: 10px;
+}
+
+.categories h4:hover:after {
+  width: 100%;
+}
+#earrings-C:after {
+  border-bottom: 3px solid #d6a78f;
+}
+#bracelets-C::after {
+  border-bottom: 3px solid #fae0a3;
+}
+#necklaces-C::after {
+  border-bottom: 3px solid #fdc7b2;
+}
+#rings-C::after {
+  border-bottom: 3px solid #f9cda7;
+}
+#clearance-C::after {
+  border-bottom: 3px solid #97cfed;
+}
+#pendants-C::after {
+  border-bottom: 3px solid #f5cce5;
+}
+@media (min-width: 768px) {
+  .clearance {
+    order: 2;
+  }
+  .pendants {
+    order: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .clearance {
+    order: 1;
+  }
+  .pendants {
+    order: 2;
+  }
+}
+/* Banners */
+.banners {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.banners img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.35s linear;
+  transform: scale(1.25);
+}
+.banners div {
+  overflow: hidden;
+  padding: 0;
+}
+.banners img:hover {
+  transform: scale(1);
+}
+
+/* Video banner */
+
+video {
+  width: 100%;
+  opacity: 0.4;
+  height: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+.video-banner h2 {
+  letter-spacing: 2.5px;
+  font-size: 46px;
+}
+.video-banner {
+  position: relative;
+}
+.video-banner .text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 700px;
+}
+.text-block button {
+  background-color: rgba(255, 255, 255, 1);
+}
+@media (max-width: 760px) {
+  .video-banner .text-block h2 {
+    font-size: 35px;
+  }
+  .video-banner .text-block p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .video-banner .text-block h2 {
+    font-size: 25px;
+  }
+  .video-banner .text-block p {
+    display: none;
+  }
+  .video-banner .text-block {
+    width: 100%;
+  }
+  .video-banner .text-block h2 {
+    letter-spacing: 0.5px;
+  }
+}
+/* Sales */
+.sales {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Montserrat", Sans-serif;
+}
+.sales img {
+  float: left;
+  margin-right: 10px;
+}
+.sale {
+  background-color: #f5cce5;
+}
+.gift {
+  background-color: #fef2e1;
+}
+.percentage {
+  background-color: #ebf4f9;
+}
+.sale,
+.gift,
+.percentage {
+  padding: 15px 0 0;
+}
+
+.sales a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.sales p {
+  font-size: 12px;
+}
+.sales a:hover {
+  text-decoration: none;
+  color: black;
+}
+@media (min-width: 360px) {
+  .sale div,
+  .gift div,
+  .percentage div {
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .sales img {
+    object-fit: scale-down;
+  }
+  .sale,
+  .gift,
+  .percentage {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .sales a {
+    font-size: 11px;
+  }
+  .sale div,
+  .gift div,
+  .percentage div {
+    align-items: flex-start;
+  }
+
+  .sale,
+  .gift,
+  .percentage {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .sales a {
+    font-size: 14px;
+  }
+}
+::ng-deep .owl-dots button {
+  outline: none;
+}

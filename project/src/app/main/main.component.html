@@ -1,0 +1,186 @@
+<!-- Slider -->
+<ngb-carousel #carousel [interval]="2500">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <div id="first-slide">
+        <img class=" w-100" src="../../assets/slider-01.png" alt="Third slide">
+        <div class="slider-content">
+          <h1>Shine like a star with diamonds</h1>
+          <p>Enjoy the beauty and chic of these elegant clear diamonds from new lixurious collection</p>
+          <button>Discover now</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <div id="second-slide">
+        <img class=" w-100" src="../../assets/slider-02.png" alt="Third slide">
+        <div class="slider-content">
+          <h1>Gold is always in fashion</h1>
+          <p>Select the jewelry fitting you perfectly highlihgting your image and uniqueness with just a single detail
+          </p>
+          <button>Discover now</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <div id="third-slide">
+        <img class=" w-100" src="../../assets/slider-03.png" alt="Third slide">
+        <div class="slider-content">
+          <h1>Creative and <br> bold <br>design ideas</h1>
+          <p>Discover the most fantastic and trendy design of jewelry by top designers and high jewelry houses </p>
+          <button>Discover now</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!-- Categories -->
+<section class="categories">
+  <a href="" class="col-lg-3 p-0 col-md-6">
+    <img src="../../assets/category1.png" alt="">
+    <h4 id="earrings-C">Earrings</h4>
+  </a>
+  <a href="" class="col-lg-3 p-0 col-md-6">
+    <img src="../../assets/category2.png" alt="">
+    <h4 id="bracelets-C">Bracelets</h4>
+  </a>
+  <a href="" class="col-lg-6 p-0">
+    <img src="../../assets/category3.png" alt="">
+    <h4 id="necklaces-C">Necklaces</h4>
+  </a>
+  <a href="" class="col-lg-3 p-0 col-md-6">
+    <img src="../../assets/category4.png" alt="">
+    <h4 id="rings-C">Rings</h4>
+  </a>
+  <a href="" class="col-lg-6 p-0 clearance">
+    <img src="../../assets/category5.png" alt="">
+    <h4 id="clearance-C">Clearance</h4>
+  </a>
+  <a href="" class="col-lg-3 p-0 col-md-6 pendants">
+    <img src="../../assets/category6.png" alt="">
+    <h4 id="pendants-C">Pendants</h4>
+  </a>
+</section>
+
+<!-- Banners -->
+<section class="banners mb-5 ">
+  <div class="col-lg-6 col-md-6">
+    <a href=""><img src="../../assets/07.png" alt=""></a>
+  </div>
+  <div class="col-lg-6 col-md-6">
+    <a href=""> <img src="../../assets/08.png" alt="" style="overflow: hidden;"></a>
+  </div>
+</section>
+
+
+<!-- Banners -->
+<section class="banners mb-5 ">
+  <div class="col-lg-6 col-md-6">
+    <a href=""><img src="../../assets/09.png" alt=""></a>
+  </div>
+  <div class="col-lg-6 col-md-6">
+    <a href=""> <img src="../../assets/10.png" alt="" style="overflow: hidden;"></a>
+  </div>
+</section>
+
+
+<!-- Video banner -->
+<section class="video-banner w-100 mb-5 ">
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="../../assets/jewellery.mp4" type="video/mp4">
+  </video>
+  <div class="text-center text-block">
+    <h2>DISCOVERING CAHNTALLE COLLECTION​</h2>
+    <p>Dreaming on perfect jewelry to complete your look? Chatalle has everything and even more for you!
+      Find your perfect item and wear it with pleasure!</p>
+    <button>Discover now</button>
+  </div>
+</section>
+
+<!-- Testimontials -->
+<section class="testimonials">
+  <div class="container-fluid">
+    <h4 class="text-center text-uppercase mt-5">Testimonials</h4>
+    <owl-carousel [carouselClasses]="['owl-theme', 'sliding']" class="p-4" [options]="slideOptions">
+      <div class="item">
+        <div>
+          <h6>"What a wonderful collection of diamonds you have! I'm very happy I had a chance to purchase a beautiful
+            necklace at a quite affordable price. The jewelry item is indeed high quality and all diamonds are clear and
+            shiny. I can say that I enjoied many of jewelry from your assortment and I'm going to buy something new. See
+            you soon!"</h6>
+          <p>By Kayleigh Roberts</p>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <h6>"My fiancee presented me an engagement ring from your catalogue. I loved it from the fist glance! Its
+            design is very elegant and chic. I'm very happy that I have such perfect ring and I will be wearing it every
+            day. I looked at other items and they are all amazing! I will recommend your store to my friends and will
+            definitely return again!"</h6>
+          <p>By Kayleigh Roberts</p>
+        </div>
+      </div>
+      <div class="item">
+        <div>
+          <h6>"I'm very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet,
+            but couldn't make my decision as all of them are very lovely. Finally I selected my perfect item and Support
+            representative was very helpful and advised me how to complete my order online. Delivery was als very fast,
+            and now I'm completely happy!"</h6>
+          <p>By Kayleigh Roberts</p>
+        </div>
+      </div>
+      <div>
+        <h6>"I'm very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet,
+          but couldn't make my decision as all of them are very lovely. Finally I selected my perfect item and Support
+          representative was very helpful and advised me how to complete my order online. Delivery was als very fast,
+          and now I'm completely happy!"</h6>
+        <p>By Kayleigh Roberts</p>
+      </div>
+      <div class="item">
+        <div>
+          <h6>"I chacked may online jewelry stores searching for beautiful but affordable earings. I couldn't find what
+            I like, but after I visited your site I saw the item I was looking for! Luxurious earings were on sale and I
+            could purchase them in a few clicks! Thank you for your work and online support. Your collection is very
+            rich and just amazing!"</h6>
+          <p>By Kayleigh Roberts</p>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+</section>
+
+
+<!-- Sales -->
+<section class="sales">
+  <div class="col-lg-4 sale col-md-4">
+    <img src="../../assets/sale.png" alt="">
+    <div class="d-flex">
+      <a href="">40% OFF —CODE: LETSPARTY</a>
+      <br>
+      <p>Limited time only.</p>
+    </div>
+  </div>
+  <div class="col-lg-4 gift col-md-4">
+    <img src="../../assets/gift.png" alt="">
+    <div class="d-flex">
+      <a href="">FREE 48HR STANDARD DELIVERY</a>
+      <br>
+      <p>Limited time only. <span style="color: #F0A285;">Shop now!</span></p>
+    </div>
+  </div>
+  <div class="col-lg-4 percentage col-md-4">
+    <img src="../../assets/percentage.png" alt="">
+    <div class="d-flex">
+      <a href="">10% STUDENT DISCOUNT</a>
+      <br>
+      <p>Excludes sale. <span style="color: #F0A285;">Shop now!</span></p>
+    </div>
+  </div>
+</section>
+
+

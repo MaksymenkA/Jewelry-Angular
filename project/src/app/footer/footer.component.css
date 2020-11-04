@@ -1,0 +1,53 @@
+footer {
+  display: flex !important;
+  flex-wrap: wrap;
+  background-color: #f3f5f7;
+  padding: 50px 35px;
+}
+footer h5 {
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.9px;
+  font-family: "Montserrat", Sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+footer h6 {
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 10px 0;
+}
+footer a:hover,
+footer h6:hover {
+  text-decoration: none;
+  color: #f0a285;
+}
+footer p {
+  font-size: 14px;
+}
+footer input {
+  padding: 7px 10px;
+  border: none;
+  outline: none;
+}
+footer button {
+  outline: none;
+  padding: 7px 15px;
+  border: none;
+  background-color: white;
+  color: #f0a285;
+  cursor: pointer;
+}
+footer button:hover {
+  color: black;
+}
+ul {
+  padding-left: 0px !important;
+}
+
+@media (min-width: 450px) {
+  footer {
+    padding: 50px 50px 20px 50px;
+  }
+}
