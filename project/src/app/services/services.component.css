@@ -1,0 +1,96 @@
+.breadcrumbs-area{
+  font-family: "Montserrat", Sans-serif !important;
+  background: linear-gradient(90deg, rgba(253,210,193,1) 0%, rgba(217,247,239,1) 50%, rgba(253,210,193,1) 100%);
+  padding: 20px 0 10px ;
+}
+.breadcrumbs-area h3{
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.breadcrumb{
+  justify-content: center;
+  background-color: transparent !important;
+  font-size: 13px;
+
+}
+.breadcrumb-item.active{
+  color: #F0A285 !important;
+}
+.breadcrumb-item a , .breadcrumb-item a:hover{
+  color: black;
+text-decoration: none;
+}
+
+/* Services list */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 10px;
+}
+.services-list img{
+  width: 100%;
+  height: auto;
+}
+.services-list div{
+text-align: center;
+}
+.services-list button{
+  font-family: "Montserrat", Sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 15px;
+  letter-spacing: 1.2px;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #F0A285;
+  border-radius: 50px 50px 50px 50px;
+  padding: 19px 24px 19px 24px;
+  border: none;
+  margin: 10px 0 55px 0;
+  transition: all .2s linear;
+  cursor: pointer;
+  outline: none;
+}
+.services-list button:hover{
+  background-color: black;
+}
+.services-list button:focus{
+  outline: none !important;
+}
+.services-list h4{
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+.services-list a:hover{
+  text-decoration: none;
+  color: #F0A285;
+}
+.services-list a{
+  color: black;
+  transition: all .2s linear;
+}
+@media (min-width: 360px) {
+  .services-list h4{
+      font-size: 20px;
+  }
+  .services-list p{
+      font-size: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  .services-list h4{
+      font-size: 1.5rem;;
+  }
+  .services-list p{
+      font-size: 16px;
+  }
+}
+@media (min-width: 1150px) {
+  .services-list {
+    padding: 10px 50px;
+  }
+}
+

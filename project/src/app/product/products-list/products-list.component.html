@@ -1,0 +1,130 @@
+<div class="product">
+  <a href="">
+    <div class="image-card">
+      <img [src]="product.first_image" alt="">
+      <img [src]="product.second_image" alt="" class="hidden">
+      <div class="icons">
+        <i class="far fa-heart"></i>
+        <i class="fas fa-shopping-basket"></i>
+      </div>
+    </div>
+  </a>
+  <div>
+    <h6 class="mt-1">
+      <a href="" *ngFor="let category of product.categories">{{category}}</a>
+    </h6>
+    <p class="mb-1">{{product.title}}</p>
+    <h6 ><del *ngIf="product.sale_price!==0; else noData">${{product.sale_price}}.00</del> ${{product.price}}.00</h6>
+    <ng-template #noData></ng-template>
+  </div>
+</div>
+
+
+
+<!--
+    <div class="hot-offers">
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-3-600x900.jpg" alt="">
+            <img src="../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-6.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+
+        <div>
+          <h6 class="mt-1"><a href="">Earrings, </a><a href="">Necklaces, </a><a href="">Rings</a></h6>
+          <p class="mb-1">Thread 18-karat rose gold diamond eternity ring</p>
+          <h6><del>$265.00</del>$235.00</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Liquid-Hoops-gold-plated-earrings-1-768x1152.jpg" alt="">
+            <img src="../../assets/Liquid-Hoops-gold-plated-earrings-6-768x1152.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+        <div>
+          <h6 class="mt-1"><a href="">Bracelets, </a><a href="">Earrings</a></h6>
+          <p class="mb-1">Ippolita Love Diamond Compass Pendant</p>
+          <h6>$198.00</h6>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Aquilone-gold-plated-necklace-768x1152.jpg" alt="">
+            <img src="../../assets/Aquilone-gold-plated-necklace-2-768x1152.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+        <div>
+          <h6 class="mt-1"><a href="">Bracelets, </a><a href="">Bridal, </a><a href="">Necklaces</a></h6>
+          <p class="mb-1">Aquilone gold-plated necklace</p>
+          <h6>$196.00</h6>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Technical-Berbere-18-karat-rose-gold-ring-3-768x1152.jpg" alt="">
+            <img src="../../assets/Technical-Berbere-18-karat-rose-gold-ring-2-768x1152.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+        <div>
+          <h6 class="mt-1"><a href="">Necklaces, </a><a href="">Rings</a></h6>
+          <p class="mb-1">The Forevermark Tribute Collection White Gold Classic Bezel Stackable Ring</p>
+          <h6>$158.00</h6>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Caro-rose-gold-plated-and-cotton-bracelet-768x1152.jpg" alt="">
+            <img src="../../assets/Caro-rose-gold-plated-and-cotton-bracelet-4-768x1152.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+        <div>
+          <h6 class="mt-1"><a href="">Bracelets, </a><a href="">Bridal</a></h6>
+          <p class="mb-1">Caro rose gold-plated and cotton bracelet</p>
+          <h6>$200.00</h6>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-5 col-sm-5">
+        <a href="">
+          <div class="image-card">
+            <img src="../../assets/Classico-18-karat-gold-earrings-768x1152.jpg" alt="">
+            <img src="../../assets/Classico-18-karat-gold-earrings-2-768x1152.jpg" alt="" class="hidden">
+            <div class="icons">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </div>
+        </a>
+        <div>
+          <h6 class="mt-1"><a href="">Earrings, </a><a href="">Necklaces</a></h6>
+          <p class="mb-1">Classico 18-karat gold earrings</p>
+          <h6>$220.00</h6>
+        </div>
+      </div>
+    </div> -->

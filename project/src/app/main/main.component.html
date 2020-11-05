@@ -1,37 +1,12 @@
 <!-- Slider -->
 <ngb-carousel #carousel [interval]="2500">
-  <ng-template ngbSlide>
+  <ng-template ngbSlide *ngFor="let slide of slides">
     <div class="picsum-img-wrapper">
-      <div id="first-slide">
-        <img class=" w-100" src="../../assets/slider-01.png" alt="Third slide">
+      <div id={{slide.id}}>
+        <img class=" w-100" [src]="slide.image" alt="Third slide">
         <div class="slider-content">
-          <h1>Shine like a star with diamonds</h1>
-          <p>Enjoy the beauty and chic of these elegant clear diamonds from new lixurious collection</p>
-          <button>Discover now</button>
-        </div>
-      </div>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <div id="second-slide">
-        <img class=" w-100" src="../../assets/slider-02.png" alt="Third slide">
-        <div class="slider-content">
-          <h1>Gold is always in fashion</h1>
-          <p>Select the jewelry fitting you perfectly highlihgting your image and uniqueness with just a single detail
-          </p>
-          <button>Discover now</button>
-        </div>
-      </div>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <div id="third-slide">
-        <img class=" w-100" src="../../assets/slider-03.png" alt="Third slide">
-        <div class="slider-content">
-          <h1>Creative and <br> bold <br>design ideas</h1>
-          <p>Discover the most fantastic and trendy design of jewelry by top designers and high jewelry houses </p>
+          <h1>{{slide.title}}</h1>
+          <p>{{slide.desc}}</p>
           <button>Discover now</button>
         </div>
       </div>
@@ -67,6 +42,16 @@
   </a>
 </section>
 
+<!-- Whats hot -->
+<section class="hot">
+  <h4>What`s hot</h4>
+  <div class="hot-offers">
+    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of products" >
+      <app-products-list [product]="product"></app-products-list>
+    </div>
+  </div>
+</section>
+
 <!-- Banners -->
 <section class="banners mb-5 ">
   <div class="col-lg-6 col-md-6">
@@ -77,17 +62,14 @@
   </div>
 </section>
 
-
-<!-- Banners -->
-<section class="banners mb-5 ">
-  <div class="col-lg-6 col-md-6">
-    <a href=""><img src="../../assets/09.png" alt=""></a>
-  </div>
-  <div class="col-lg-6 col-md-6">
-    <a href=""> <img src="../../assets/10.png" alt="" style="overflow: hidden;"></a>
+<section class="hot">
+  <h4>Special</h4>
+  <div class="hot-offers">
+    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of products" >
+      <app-products-list [product]="product"></app-products-list>
+    </div>
   </div>
 </section>
-
 
 <!-- Video banner -->
 <section class="video-banner w-100 mb-5 ">
@@ -102,58 +84,61 @@
   </div>
 </section>
 
+<!-- Blog -->
+<section class="blog">
+  <h4 class="text-center mt-5">BLOG UPDATE</h4>
+  <div class="blog-block">
+    <div class="col-lg-4 col-md-4 ">
+      <a href=""> <img src="../../assets/blog1.jpg" alt="">
+      </a>
+      <h4 class="mb-5">Watch the Magical New Trailer for A Wrinkle in Time</h4>
+    </div>
+    <div class="col-lg-4 col-md-4 ">
+      <a href=""> <img src="../../assets/blog2.jpg" alt="">
+      </a>
+      <h4 class="mb-5">Never Buy A Boring Coat</h4>
+    </div>
+    <div class="col-lg-4 col-md-4 ">
+      <a href=""> <img src="../../assets/blog3.jpg" alt="">
+      </a>
+      <h4 class="mb-5">Cook Like a True Sicilian!</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Banners -->
+<section class="banners mb-5 ">
+  <div class="col-lg-6 col-md-6">
+    <a href=""><img src="../../assets/09.png" alt=""></a>
+  </div>
+  <div class="col-lg-6 col-md-6">
+    <a href=""> <img src="../../assets/10.png" alt="" style="overflow: hidden;"></a>
+  </div>
+</section>
+
 <!-- Testimontials -->
 <section class="testimonials">
   <div class="container-fluid">
     <h4 class="text-center text-uppercase mt-5">Testimonials</h4>
     <owl-carousel [carouselClasses]="['owl-theme', 'sliding']" class="p-4" [options]="slideOptions">
-      <div class="item">
-        <div>
-          <h6>"What a wonderful collection of diamonds you have! I'm very happy I had a chance to purchase a beautiful
-            necklace at a quite affordable price. The jewelry item is indeed high quality and all diamonds are clear and
-            shiny. I can say that I enjoied many of jewelry from your assortment and I'm going to buy something new. See
-            you soon!"</h6>
-          <p>By Kayleigh Roberts</p>
-        </div>
-      </div>
-      <div class="item">
-        <div>
-          <h6>"My fiancee presented me an engagement ring from your catalogue. I loved it from the fist glance! Its
-            design is very elegant and chic. I'm very happy that I have such perfect ring and I will be wearing it every
-            day. I looked at other items and they are all amazing! I will recommend your store to my friends and will
-            definitely return again!"</h6>
-          <p>By Kayleigh Roberts</p>
-        </div>
-      </div>
-      <div class="item">
-        <div>
-          <h6>"I'm very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet,
-            but couldn't make my decision as all of them are very lovely. Finally I selected my perfect item and Support
-            representative was very helpful and advised me how to complete my order online. Delivery was als very fast,
-            and now I'm completely happy!"</h6>
-          <p>By Kayleigh Roberts</p>
-        </div>
-      </div>
-      <div>
-        <h6>"I'm very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet,
-          but couldn't make my decision as all of them are very lovely. Finally I selected my perfect item and Support
-          representative was very helpful and advised me how to complete my order online. Delivery was als very fast,
-          and now I'm completely happy!"</h6>
+      <div class="item" *ngFor="let quote of quotes">
+        <h6>"{{quote}}"</h6>
         <p>By Kayleigh Roberts</p>
-      </div>
-      <div class="item">
-        <div>
-          <h6>"I chacked may online jewelry stores searching for beautiful but affordable earings. I couldn't find what
-            I like, but after I visited your site I saw the item I was looking for! Luxurious earings were on sale and I
-            could purchase them in a few clicks! Thank you for your work and online support. Your collection is very
-            rich and just amazing!"</h6>
-          <p>By Kayleigh Roberts</p>
-        </div>
       </div>
     </owl-carousel>
   </div>
 </section>
 
+<!-- Follow insta -->
+<section class="insta">
+  <h4 class="text-center mt-5">FOLLOW US ON INSTAGRAMS</h4>
+  <div class="container-fluid insta-block mt-2 ">
+    <img src="../../assets/follow1.jpg" alt="" class="col-lg-3 col-md-6 lightbox">
+    <img src="../../assets/blog3.jpg" alt="" class="col-lg-3 col-md-6 lightbox">
+    <img src="../../assets/follow2.jpg" alt="" class="col-lg-3 col-md-6 lightbox">
+    <img src="../../assets/blog1.jpg" alt="" class="col-lg-3 col-md-6 lightbox">
+  </div>
+</section>
 
 <!-- Sales -->
 <section class="sales">
@@ -182,5 +167,3 @@
     </div>
   </div>
 </section>
-
-

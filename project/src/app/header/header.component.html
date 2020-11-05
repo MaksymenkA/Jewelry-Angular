@@ -1,13 +1,13 @@
 <header class="header">
   <nav class="nav">
     <div class="left-navbar">
-      <a class="nav-link active text-uppercase" id="home" href="#">Home</a>
-      <a class="nav-link  text-uppercase" id="shopDropdown" style="cursor: pointer;">
+      <a class="nav-link  text-uppercase" id="home" href="/main" >Home</a>
+      <a class="nav-link  text-uppercase" id="shopDropdown" style="cursor: pointer;" routerLink="/shop">
         Shop <i class="fas fa-angle-down pl-1"></i>
       </a>
       <div id="shop" class="dropdown-content " aria-labelledby="shopDropdown">
         <div class="col-lg-12 mb-2">
-          <h3><a href="../shop/shop.html" style="font-weight: 600;">Shop</a></h3>
+          <h3><a routerLink="/shop" style="font-weight: 600;">Shop</a></h3>
         </div>
         <div id="jewelry" class="col-lg-2 col-sm-6">
           <h5><a href="">Jewelry</a></h5>
@@ -58,22 +58,22 @@
       </div>
 
 
-      <a class="nav-link text-uppercase" id="blog" href="../blog/blog.html">Blog</a>
+      <a class="nav-link text-uppercase" id="blog" routerLink="/blog">Blog</a>
       <div>
-        <a class="nav-link  text-uppercase" style="cursor: pointer;" id="servicesDropdown" onfocus="hover(this)">
+        <a class="nav-link  text-uppercase" style="cursor: pointer;" id="servicesDropdown" onfocus="hover(this)" routerLink="/services">
           Services <i class="fas fa-angle-down pl-1"></i>
         </a>
         <div id="services" class="dropdown-content" aria-labelledby="servicesDropdown">
-          <h3 class="col-lg-12 pl-0"><a href="../services/services.html" style="font-weight: 600;">Services</a></h3>
+          <h3 class="col-lg-12 pl-0"><a routerLink="/services" style="font-weight: 600;">Services</a></h3>
           <ul class="col-lg-12">
-            <h6><a href="../services/service.html">Shopping guide</a></h6>
-            <h6><a href="../services/service.html">Wardrobe assistant</a></h6>
-            <h6><a href="../services/service.html">Basic cosmetics</a></h6>
+            <h6><a routerLink="/services">Shopping guide</a></h6>
+            <h6><a routerLink="/services">Wardrobe assistant</a></h6>
+            <h6><a routerLink="/services">Basic cosmetics</a></h6>
           </ul>
         </div>
       </div>
 
-      <a class="nav-link text-uppercase" id="gallery" href="../gallery/gallery.html">Gallery</a>
+      <a class="nav-link text-uppercase" id="gallery" routerLink="/gallery">Gallery</a>
     </div>
 
     <div class="logo">

@@ -1,0 +1,103 @@
+    <!-- Breadcrumb -->
+
+    <section class="breadcrumbs-area">
+        <h3 class="text-center">SHOP</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item text-uppercase"><a routerLink="/main">Home</a></li>
+            <li class="breadcrumb-item text-uppercase active" aria-current="page">Shop</li>
+        </ol>
+    </section>
+
+    <!-- Main section -->
+    <div class="main-section ">
+        <section class="filter col-lg-3 col-md-4 col-sm-12">
+            <div id="categories">
+                <h5 class="text-center">Categories</h5>
+                <ul>
+                    <!-- <h6><input type="checkbox" checked>Bracelets</h6> -->
+                    <h6><input type="checkbox">Bracelets</h6>
+                    <h6><input type="checkbox">Bridal</h6>
+                    <h6><input type="checkbox">Earrings</h6>
+                    <h6><input type="checkbox">Necklaces</h6>
+                    <h6><input type="checkbox">Rings</h6>
+                </ul>
+            </div>
+            <div class="filter mb-5 mt-5">
+                <h5 class="text-center">Filter by price</h5>
+                <div slider id="slider-distance">
+                    <div>
+                        <div inverse-left style="width:70%;"></div>
+                        <div inverse-right style="width:70%;"></div>
+                        <div range style="left:30%;right:40%;"></div>
+                        <span thumb style="left:30%;"></span>
+                        <span thumb style="left:60%;"></span>
+                        <div sign style="left:30%;">
+                            <span id="value">30</span><span>$</span>
+                        </div>
+                        <div sign style="left:60%;">
+                            <span id="value">60</span><span>$</span>
+                        </div>
+                    </div>
+                    <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="if (!window.__cfRLUnblockHandlers) return false;
+                  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[1].style.width=value+'%';
+                  children[5].style.left=value+'%';
+                  children[7].style.left=value+'%';children[11].style.left=value+'%';
+                  children[11].childNodes[1].innerHTML=this.value;" />
+                    <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="if (!window.__cfRLUnblockHandlers) return false;
+                  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[3].style.width=(100-value)+'%';
+                  children[5].style.right=(100-value)+'%';
+                  children[9].style.left=value+'%';children[13].style.left=value+'%';
+                  children[13].childNodes[1].innerHTML=this.value;" />
+                </div>
+            </div>
+            <!-- Products -->
+            <div class="products">
+                <h5 class="text-center">Products</h5>
+                <div class="pb-4 pt-3 d-flex">
+                    <a href="">
+                        <img src="../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-3-600x900.jpg" alt="">
+                    </a>
+                    <div class="right-side">
+                        <h6><a href="">Necklaces, </a><a href="">Rings</a></h6>
+                        <p>Thread 18-karat rose gold diamond eternity ring</p>
+                        <h5><del>$265.00</del> $235.00</h5>
+                    </div>
+                </div>
+                <div class="pb-4 pt-3 d-flex">
+                    <a href="">
+                        <img src="../../assets/Liquid-Hoops-gold-plated-earrings-1-768x1152.jpg" alt="">
+                    </a>
+                    <div class="right-side">
+                        <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
+                        <p>Ippolita Love Diamond Compass Pendant</p>
+                        <h5>$235.00</h5>
+                    </div>
+                </div>
+                <div class="pb-4 pt-3 d-flex">
+                    <a href="">
+                        <img src="../../assets/Mini-Petal-rose-gold-vermeil-and-silver-earrings-768x1152.jpg" alt="">
+                    </a>
+                    <div class="right-side">
+                        <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
+                        <p>Michael Kors Legends Naga Chandelier Earrings in Sterling Silver</p>
+                        <h5>$450.00</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-lg-9 col-md-8">
+          <div class="hot-offers">
+            <div class="col-lg-4 col-md-6 mb-5 col-sm-6" *ngFor="let product of products">
+          <app-products-list [product]="product"></app-products-list>
+          </div>
+          </div>
+        </section>
+
+</div>

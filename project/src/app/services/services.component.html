@@ -1,0 +1,21 @@
+  <!-- Breadcrumb -->
+
+  <section class="breadcrumbs-area">
+    <h3 class="text-center">SERVICES</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item text-uppercase"><a routerLink="/main">Home</a></li>
+      <li class="breadcrumb-item text-uppercase active" aria-current="page">Services</li>
+    </ol>
+  </section>
+
+  <!-- Services list -->
+  <section class="services-list">
+    <div class="col-lg-4 col-md-4" *ngFor="let service of services">
+      <img [src]="service.image" alt="">
+      <a href="">
+        <h4>{{service.title}}</h4>
+      </a>
+      <p>{{service.desc}}</p>
+      <button>Learn more</button>
+    </div>
+  </section>

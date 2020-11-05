@@ -1,0 +1,81 @@
+/* WHat`s hot */
+.product h6 a {
+  font-size: 10px;
+  color: #f0a285;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.product h6 a::after {
+  content: ", ";
+}
+
+.product h6 a:last-child::after {
+  content: "";
+}
+
+.product p {
+  font-size: 13px;
+}
+
+.image-card {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+}
+.image-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  transition: 0.5s linear;
+}
+.image-card .hidden {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.image-card:hover .hidden {
+  opacity: 1;
+}
+
+.product .icons {
+  opacity: 0;
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s linear;
+}
+.product .icons i {
+  outline: none;
+  background-color: #f9cda7;
+  border-radius: 60px;
+  border: none;
+  color: black;
+  padding: 10px;
+}
+.image-card:hover .icons {
+  opacity: 1;
+}
+
+@media (min-width: 360px) {
+  .product .icons i {
+    font-size: 30px;
+    margin: 0 30px;
+  }
+}
+@media (min-width: 768px) {
+  .product .icons i {
+    font-size: 25px;
+  }
+}
+@media (min-width: 992px) {
+  .product .icons i {
+    font-size: 15px;
+    margin: 0px 10px;
+  }
+}
