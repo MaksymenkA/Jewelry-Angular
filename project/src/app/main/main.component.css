@@ -11,6 +11,9 @@
   transition: 1s ease;
   animation: fade3 1s linear;
 }
+::ng-deep .carousel-control-next, .carousel-control-prev{
+  z-index: 0 !important;
+}
 @keyframes fade3 {
   0% {
     opacity: 0.5;

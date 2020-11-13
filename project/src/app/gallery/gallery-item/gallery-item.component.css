@@ -1,0 +1,28 @@
+h6 {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+ p {
+  font-size: 14px;
+}
+
+img {
+  height: 300px;
+  object-fit: cover;
+  image-orientation: from-image;
+}
+.text-content {
+  position: absolute;
+  bottom: 0px;
+  line-height: 18px;
+  width: -webkit-fill-available;
+  background-color: #54595f;
+  color: white;
+  padding-top: 10px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+article:hover .text-content {
+  opacity: 1;
+}

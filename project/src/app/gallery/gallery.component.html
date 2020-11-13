@@ -10,7 +10,10 @@
 
 <!-- Gallery -->
 <section class="image-gallery">
-  <article>
+  <article *ngFor="let item of gallery_items">
+    <app-gallery-item [gallery_item]='item'></app-gallery-item>
+  </article>
+  <!-- <article>
     <div class="m-2 d-flex justify-content-center position-relative">
       <img src="../../assets/gallery.jpg" alt="" class="w-100 h-auto">
       <div class="text-center text-content">
@@ -64,6 +67,6 @@
         <p>We always appreciate a good nail art tutorial</p>
       </div>
     </div>
-  </article>
+  </article> -->
 
 </section>

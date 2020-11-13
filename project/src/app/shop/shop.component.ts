@@ -1,5 +1,6 @@
 import { Product } from './../product/product.module';
 import { Component, OnInit } from '@angular/core';
+import { LabelType, Options } from 'ng5-slider';
 
 @Component({
   selector: 'app-shop',
@@ -32,9 +33,26 @@ export class ShopComponent implements OnInit {
     categories: ['Earrings', 'Necklaces'], title: 'Classico 18-karat gold earrings', price: 220, sale_price: 0
   }];
 
+  minValue: number = 90;
+  maxValue: number = 350;
+  options: Options = {
+    floor: 0,
+    ceil: 500,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return '$' + value;
+        case LabelType.High:
+          return '$' + value;
+        default:
+          return '$' + value;
+      }
+    }
+  };
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

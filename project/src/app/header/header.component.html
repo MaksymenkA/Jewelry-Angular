@@ -1,13 +1,21 @@
 <header class="header">
   <nav class="nav">
-    <div class="left-navbar">
-      <a class="nav-link  text-uppercase" id="home" href="/main" >Home</a>
-      <a class="nav-link  text-uppercase" id="shopDropdown" style="cursor: pointer;" routerLink="/shop">
+    <div class="left-navbar" [style.display]="isActive ? 'flex' : (!isActive ? '' : null)">
+
+      <a class="nav-link  text-uppercase" id="home" href="/main" [routerLink]="['main']"
+        [routerLinkActive]="['active']">Home</a>
+
+      <a class=" dropdown nav-link  text-uppercase" id="shopDropdown" style="cursor: pointer;"
+        (mouseover)="openDropDown($event, shopMenu)" (mouseleave)="closeDropDown($event, shopMenu)"
+        routerLinkActive="active" [routerLink]="['shop']">
         Shop <i class="fas fa-angle-down pl-1"></i>
       </a>
-      <div id="shop" class="dropdown-content " aria-labelledby="shopDropdown">
+
+      <div *ngIf="shopListIsOpened==true" id="shop" class="dropdown-content " aria-labelledby="shopDropdown"
+        (mouseleave)="closeMenu($event, shopMenu)">
         <div class="col-lg-12 mb-2">
-          <h3><a routerLink="/shop" style="font-weight: 600;">Shop</a></h3>
+          <button (click)="closeMenu($event)">x</button>
+          <h3><a [routerLink]="['shop']" [routerLinkActive]="['active']" style="font-weight: 600;">Shop</a></h3>
         </div>
         <div id="jewelry" class="col-lg-2 col-sm-6">
           <h5><a href="">Jewelry</a></h5>
@@ -57,14 +65,18 @@
         </div>
       </div>
 
+      <a class="nav-link text-uppercase" id="blog" [routerLink]="['blog']" [routerLinkActive]="['active']">Blog</a>
 
-      <a class="nav-link text-uppercase" id="blog" routerLink="/blog">Blog</a>
       <div>
-        <a class="nav-link  text-uppercase" style="cursor: pointer;" id="servicesDropdown" onfocus="hover(this)" routerLink="/services">
+        <a class="nav-link  text-uppercase" style="cursor: pointer;" id="servicesDropdown"
+          (mouseover)="openDropDown($event, serviceMenu)" (mouseleave)="closeDropDown($event,serviceMenu)">
           Services <i class="fas fa-angle-down pl-1"></i>
         </a>
-        <div id="services" class="dropdown-content" aria-labelledby="servicesDropdown">
-          <h3 class="col-lg-12 pl-0"><a routerLink="/services" style="font-weight: 600;">Services</a></h3>
+
+        <div *ngIf="serviceListIsOpened==true" (mouseleave)="closeMenu($event)" id="services" class="dropdown-content"
+          aria-labelledby="servicesDropdown">
+          <button (click)="closeMenu($event)">x</button>
+          <h3 class="col-lg-12 pl-0"><a [routerLink]="['services']" style="font-weight: 600;">Services</a></h3>
           <ul class="col-lg-12">
             <h6><a routerLink="/services">Shopping guide</a></h6>
             <h6><a routerLink="/services">Wardrobe assistant</a></h6>
@@ -73,7 +85,9 @@
         </div>
       </div>
 
-      <a class="nav-link text-uppercase" id="gallery" routerLink="/gallery">Gallery</a>
+
+      <a class="nav-link text-uppercase" id="gallery" [routerLink]="['gallery']"
+        [routerLinkActive]="['active']">Gallery</a>
     </div>
 
     <div class="logo">
@@ -85,7 +99,7 @@
       <i class="fas fa-user"></i>
     </div>
   </nav>
-  <div class="nav-toggle">
+  <div class="nav-toggle" (click)="isActive = !isActive" [ngClass]="{'active' : isActive == true}">
     <span class="nav-toggle-item"></span>
   </div>
 </header>
