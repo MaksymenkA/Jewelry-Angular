@@ -18,12 +18,16 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
   openDropDown(event, menuName) {
     if (menuName == "shop") {
       this.shopListIsOpened = true;
     } else if (menuName == "service") {
       this.serviceListIsOpened = true;
+    } else {
+      this.shopListIsOpened = false;
+      this.serviceListIsOpened = false;
     }
   }
   closeDropDown(event, menuName) {
@@ -36,12 +40,15 @@ export class HeaderComponent implements OnInit {
       }
     }
     else if (menuName == "service") {
+      console.log("Service");
+      console.log(event);
+
       this.shopListIsOpened = false;
-        this.shopIsOpened = false;
-      if (event.screenY > 120 && event.screenY < 140) {
+      this.shopIsOpened = false;
+      if (event.screenY > 120 && event.screenY < 157 || event.screenY > 120 && event.screenY < 157 && event.screenX < 217) {
         this.serviceIsOpened = false;
         this.serviceListIsOpened = false;
-        console.log(event);
+        console.log("service2");
       }
     }
     else {

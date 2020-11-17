@@ -2,12 +2,12 @@
   <nav class="nav">
     <div class="left-navbar" [style.display]="isActive ? 'flex' : (!isActive ? '' : null)">
 
-      <a class="nav-link  text-uppercase" id="home" href="/main" [routerLink]="['main']"
+      <a class="nav-link  text-uppercase" id="home"  [routerLink]="['main']"
         [routerLinkActive]="['active']">Home</a>
 
       <a class=" dropdown nav-link  text-uppercase" id="shopDropdown" style="cursor: pointer;"
         (mouseover)="openDropDown($event, shopMenu)" (mouseleave)="closeDropDown($event, shopMenu)"
-        routerLinkActive="active" [routerLink]="['shop']">
+        [routerLinkActive]="['active']">
         Shop <i class="fas fa-angle-down pl-1"></i>
       </a>
 
@@ -15,7 +15,7 @@
         (mouseleave)="closeMenu($event, shopMenu)">
         <div class="col-lg-12 mb-2">
           <button (click)="closeMenu($event)">x</button>
-          <h3><a [routerLink]="['shop']" [routerLinkActive]="['active']" style="font-weight: 600;">Shop</a></h3>
+          <h3><a [routerLink]="['shop']" style="font-weight: 600;">Shop</a></h3>
         </div>
         <div id="jewelry" class="col-lg-2 col-sm-6">
           <h5><a href="">Jewelry</a></h5>

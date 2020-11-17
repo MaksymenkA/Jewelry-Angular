@@ -1,9 +1,11 @@
+import { ProductService } from './product/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { OwlModule } from 'ngx-owl-carousel';
 import { Ng5SliderModule } from 'ng5-slider';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -39,9 +41,10 @@ import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.compon
     NgbModule,
     AppRoutingModule,
     OwlModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    HttpClientModule
     ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

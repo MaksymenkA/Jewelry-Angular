@@ -1,5 +1,7 @@
+import { ProductService } from './../product/product.service';
 import { Product } from './../product/product.module';
 import { Slide } from './slide.module';
+import { map } from 'rxjs/operators';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,31 +12,8 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class MainComponent implements OnInit {
-
-  products: Product[] = [{
-    first_image: '../../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-3-600x900.jpg', second_image: '../../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-6.jpg',
-    categories: ['Earrings', 'Necklaces', 'Rings'], title: 'Thread 18-karat rose gold diamond eternity ring', price: 235, sale_price: 265
-  },
-  {
-    first_image: '../../../assets/Liquid-Hoops-gold-plated-earrings-1-768x1152.jpg', second_image: '../../../assets/Liquid-Hoops-gold-plated-earrings-6-768x1152.jpg',
-    categories: ['Bracelets', 'Earrings'], title: 'Ippolita Love Diamond Compass Pendant', price: 198, sale_price:  0
-  },
-  {
-    first_image: '../../../assets/Aquilone-gold-plated-necklace-768x1152.jpg', second_image: '../../../assets/Aquilone-gold-plated-necklace-2-768x1152.jpg',
-    categories: ['Bracelets', 'Bridal','Necklaces'], title: 'Aquilone gold-plated necklace', price: 196, sale_price: 0
-  },
-  {
-    first_image: '../../../assets/Technical-Berbere-18-karat-rose-gold-ring-3-768x1152.jpg', second_image: '../../../assets/Technical-Berbere-18-karat-rose-gold-ring-2-768x1152.jpg',
-    categories: ['Necklaces', 'Rings'], title: 'The Forevermark Tribute Collection White Gold Classic Bezel Stackable Ring', price: 158, sale_price: 0
-  },
-  {
-    first_image: '../../../assets/Caro-rose-gold-plated-and-cotton-bracelet-768x1152.jpg', second_image: '../../../assets/Caro-rose-gold-plated-and-cotton-bracelet-4-768x1152.jpg',
-    categories: ['Bracelets', 'Bridal'], title: 'Caro rose gold-plated and cotton bracelet', price: 200, sale_price: 0
-  },
-  {
-    first_image: '../../../assets/Classico-18-karat-gold-earrings-768x1152.jpg', second_image: '../../../assets/Classico-18-karat-gold-earrings-2-768x1152.jpg',
-    categories: ['Earrings', 'Necklaces'], title: 'Classico 18-karat gold earrings', price: 220, sale_price: 0
-  }];
+  hotProducts: Product[] = [];
+  specialProducts: Product[] = [];
   slideOptions = {
     responsiveClass: true,
     stagePadding: 23,
@@ -68,9 +47,16 @@ export class MainComponent implements OnInit {
     'I\'m very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet, but couldn\'t make my decision as all of them are very lovely. Finally I selected my perfect item and Support representative was very helpful and advised me how to complete my order online. Delivery was als very fast, and now I\'m completely happy!',
     'I chacked may online jewelry stores searching for beautiful but affordable earings. I couldn\'t find what I like, but after I visited your site I saw the item I was looking for! Luxurious earings were on sale and I could purchase them in a few clicks! Thank you for your work and online support. Your collection is very rich and just amazing!'];
 
-  constructor() { }
+  constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
+    // this.productService.onCreateProducts();
+    this.productService.onFetchProducts()
+      .subscribe(data => {
+        this.specialProducts = Object.values(data)['1'];
+        this.hotProducts = Object.values(data)['0'];
+      });
+
   }
 
 }
