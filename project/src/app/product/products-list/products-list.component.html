@@ -1,8 +1,9 @@
+
 <div class="product">
-  <a href="">
+  <a [routerLink]="['/product', product.id]">
     <div class="image-card">
-      <img [src]="product.first_image" alt="">
-      <img [src]="product.second_image" alt="" class="hidden">
+      <img  [src]="product.first_image" alt="">
+      <img  [src]="product.second_image" alt="" class="hidden">
       <div class="icons">
         <i class="far fa-heart"></i>
         <i class="fas fa-shopping-basket"></i>
@@ -11,7 +12,7 @@
   </a>
   <div>
     <h6 class="mt-1">
-      <a href="" *ngFor="let category of product.categories">{{category}}</a>
+      <a  *ngFor="let category of product.categories">{{category}}</a>
     </h6>
     <p class="mb-1">{{product.title}}</p>
     <h6 ><del *ngIf="product.sale_price!==0; else noData">${{product.sale_price}}.00</del> ${{product.price}}.00</h6>

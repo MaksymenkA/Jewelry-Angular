@@ -3,7 +3,7 @@ import { Product } from './../product/product.module';
 import { Slide } from './slide.module';
 import { map } from 'rxjs/operators';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -47,6 +47,9 @@ export class MainComponent implements OnInit {
     'I\'m very satisfied with my purchase as well as with your wonderful service! I wanted to buy a bracelet, but couldn\'t make my decision as all of them are very lovely. Finally I selected my perfect item and Support representative was very helpful and advised me how to complete my order online. Delivery was als very fast, and now I\'m completely happy!',
     'I chacked may online jewelry stores searching for beautiful but affordable earings. I couldn\'t find what I like, but after I visited your site I saw the item I was looking for! Luxurious earings were on sale and I could purchase them in a few clicks! Thank you for your work and online support. Your collection is very rich and just amazing!'];
 
+  @HostListener("window:scroll", []) onWindowScroll() {
+    this.scrollFunction();
+  }
   constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
@@ -57,6 +60,16 @@ export class MainComponent implements OnInit {
         this.hotProducts = Object.values(data)['0'];
       });
 
+  }
+  scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      document.getElementById("goToTop").style.display = "block";
+    } else {
+      document.getElementById("goToTop").style.display = "none";
+    }
+  }
+  topFunction() {
+    document.documentElement.scrollTop = 0;
   }
 
 }

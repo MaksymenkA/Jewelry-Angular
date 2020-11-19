@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { OwlModule } from 'ngx-owl-carousel';
 import { Ng5SliderModule } from 'ng5-slider';
 import { HttpClientModule } from '@angular/common/http';
+import { GalleryModule } from "ng-gallery";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -42,7 +43,8 @@ import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.compon
     AppRoutingModule,
     OwlModule,
     Ng5SliderModule,
-    HttpClientModule
+    HttpClientModule,
+    GalleryModule
     ],
   providers: [ProductService],
   bootstrap: [AppComponent]

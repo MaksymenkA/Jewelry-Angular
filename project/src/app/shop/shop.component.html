@@ -1,73 +1,86 @@
-    <!-- Breadcrumb -->
+<!-- Breadcrumb -->
 
-    <section class="breadcrumbs-area">
-        <h3 class="text-center">SHOP</h3>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item text-uppercase"><a routerLink="/main">Home</a></li>
-            <li class="breadcrumb-item text-uppercase active" aria-current="page">Shop</li>
-        </ol>
-    </section>
+<section class="breadcrumbs-area">
+  <h3 class="text-center">SHOP</h3>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item text-uppercase"><a routerLink="/main">Home</a></li>
+    <li class="breadcrumb-item text-uppercase active" aria-current="page">Shop</li>
+  </ol>
+</section>
 
-    <!-- Main section -->
+<!-- Main section -->
+
+<div>
+  <select name="sorting" id="sorting">
+    <option selected="selected" value="one">Default option</option>
+    <option value="two">Sort by price: low to high</option>
+    <option value="three">Sort by price: high to low</option>
+    </select>
     <div class="main-section ">
-        <section class="filter col-lg-3 col-md-4 col-sm-12">
-            <div id="categories">
-                <h5 class="text-center">Categories</h5>
-                <ul>
-                    <!-- <h6><input type="checkbox" checked>Bracelets</h6> -->
-                    <h6><input type="checkbox">Bracelets</h6>
-                    <h6><input type="checkbox">Bridal</h6>
-                    <h6><input type="checkbox">Earrings</h6>
-                    <h6><input type="checkbox">Necklaces</h6>
-                    <h6><input type="checkbox">Rings</h6>
-                </ul>
-            </div>
-            <div class="filter mb-5 mt-5">
-                <h5 class="text-center">Filter by price</h5>
-                <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
-            </div>
-            <!-- Products -->
-            <div class="products">
-                <h5 class="text-center">Products</h5>
-                <div class="pb-4 pt-3 d-flex">
-                    <a href="">
-                        <img src="../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-3-600x900.jpg" alt="">
-                    </a>
-                    <div class="right-side">
-                        <h6><a href="">Necklaces, </a><a href="">Rings</a></h6>
-                        <p>Thread 18-karat rose gold diamond eternity ring</p>
-                        <h5><del>$265.00</del> $235.00</h5>
-                    </div>
-                </div>
-                <div class="pb-4 pt-3 d-flex">
-                    <a href="">
-                        <img src="../../assets/Liquid-Hoops-gold-plated-earrings-1-768x1152.jpg" alt="">
-                    </a>
-                    <div class="right-side">
-                        <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
-                        <p>Ippolita Love Diamond Compass Pendant</p>
-                        <h5>$235.00</h5>
-                    </div>
-                </div>
-                <div class="pb-4 pt-3 d-flex">
-                    <a href="">
-                        <img src="../../assets/Mini-Petal-rose-gold-vermeil-and-silver-earrings-768x1152.jpg" alt="">
-                    </a>
-                    <div class="right-side">
-                        <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
-                        <p>Michael Kors Legends Naga Chandelier Earrings in Sterling Silver</p>
-                        <h5>$450.00</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="col-lg-9 col-md-8">
-          <div class="hot-offers">
-            <div class="col-lg-4 col-md-6 mb-5 col-sm-6" *ngFor="let product of products">
-          <app-products-list [product]="product"></app-products-list>
-          </div>
-          </div>
-        </section>
+      <section class="filter col-lg-3 col-md-4 col-sm-12">
 
+        <div id="categories">
+          <h5 class="text-center">Categories</h5>
+          <ul>
+            <!-- <h6><input type="checkbox" checked>Bracelets</h6> -->
+            <h6><input type="checkbox">Bracelets</h6>
+            <h6><input type="checkbox">Bridal</h6>
+            <h6><input type="checkbox">Earrings</h6>
+            <h6><input type="checkbox">Necklaces</h6>
+            <h6><input type="checkbox">Rings</h6>
+          </ul>
+        </div>
+        <div class="filter mb-5 mt-5">
+          <h5 class="text-center">Filter by price</h5>
+          <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+        </div>
+        <!-- Products -->
+        <div class="products">
+          <h5 class="text-center">Products</h5>
+          <div class="pb-4 pt-3 d-flex">
+            <a href="">
+              <img src="../../assets/Thread-18-karat-rose-gold-diamond-eternity-ring-3-600x900.jpg" alt="">
+            </a>
+            <div class="right-side">
+              <h6><a href="">Necklaces, </a><a href="">Rings</a></h6>
+              <p>Thread 18-karat rose gold diamond eternity ring</p>
+              <h5><del>$265.00</del> $235.00</h5>
+            </div>
+          </div>
+          <div class="pb-4 pt-3 d-flex">
+            <a href="">
+              <img src="../../assets/Liquid-Hoops-gold-plated-earrings-1-768x1152.jpg" alt="">
+            </a>
+            <div class="right-side">
+              <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
+              <p>Ippolita Love Diamond Compass Pendant</p>
+              <h5>$235.00</h5>
+            </div>
+          </div>
+          <div class="pb-4 pt-3 d-flex">
+            <a href="">
+              <img src="../../assets/Mini-Petal-rose-gold-vermeil-and-silver-earrings-768x1152.jpg" alt="">
+            </a>
+            <div class="right-side">
+              <h6><a href="">Earrings, </a><a href="">Necklaces, </a></h6>
+              <p>Michael Kors Legends Naga Chandelier Earrings in Sterling Silver</p>
+              <h5>$450.00</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-9 col-md-8">
+        <div class="hot-offers">
+          <div class="col-lg-4 col-md-6 mb-5 col-sm-6" *ngFor="let product of uniqueProducts | slice: pageSize | slice: 0:itemsPerPage">
+            <app-products-list [product]="product"></app-products-list>
+          </div>
+        </div>
+        <ngb-pagination [collectionSize]="products.length" [pageSize]="itemsPerPage" [(page)]="currentPage" [maxSize]="5" [boundaryLinks]="true" (pageChange)="onPageChange(currentPage)">
+        </ngb-pagination>
+      </section>
+
+    </div>
 </div>
+
