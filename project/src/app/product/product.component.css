@@ -1,0 +1,131 @@
+.product-details {
+  margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .product-details {
+    margin: 50px 0;
+  }
+}
+/* Gallery */
+
+.gallery-wrapper {
+  text-align: center;
+}
+
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+  object-fit: cover;
+  max-width: 600px;
+}
+
+::ng-deep .ngx-gallery ngx-gallery-image {
+  height: 100% !important;
+  border: 1px solid lightgray;
+}
+::ng-deep .ngx-gallery ngx-gallery-thumbnails {
+  height: calc(30% - 10px) !important;
+  width: 100% !important;
+}
+::ng-deep .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+  border: 1px solid #f0a285 !important;
+}
+::ng-deep .ngx-gallery-thumbnails .ngx-gallery-thumbnail.ngx-gallery-active {
+  border: 1px solid black !important;
+}
+
+/* Info */
+.info-section {
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.info-section h4 {
+  margin-bottom: 1rem;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 10px;
+}
+.buttons button {
+  padding: 21px 20px;
+  outline: none;
+  border: none;
+  background-color: #f0a285;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+.buttons button i {
+  margin-right: 10px;
+}
+.buttons button:hover {
+  background-color: black;
+}
+.categories h6 a::after {
+  content: ", ";
+}
+.categories h6 a:last-child::after {
+  content: "";
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+.categories h6 {
+  margin-right: 5px;
+}
+.categories a {
+  color: black;
+}
+.categories a:hover {
+  color: #f0a285;
+  text-decoration: none;
+}
+
+@media (max-width: 950px) {
+  .buttons {
+    margin: 20px 10px;
+  }
+  .info-section p {
+    font-size: 15px;
+  }
+  .info-section {
+    margin: 10px 0;
+  }
+  .info-section h4 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .info-section {
+    margin: 40px;
+    text-align: center;
+  }
+  .info-section .categories {
+    justify-content: center;
+  }
+}
+.hot h4 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.hot-offers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* ::ng-deep .ngx-gallery-image:nth-child(even){
+  background-position: inherit !important;
+} */

@@ -1,1 +1,34 @@
-<img [src]="first_image" alt="">
+
+<section class="product-details ">
+  <div class="gallery-wrapper col-lg-6 col-md-6">
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+  </div>
+  <section class="info-section col-lg-6 col-md-6">
+    <div>
+      <h4 class="text-uppercase"><b>{{product.title}}</b></h4>
+      <h4 *ngIf="product.sale_price==0; else saleData"> <b>${{product.price}}.00</b></h4>
+      <ng-template #saleData>
+       <b> <h4><del>${{product.price}}.00</del> ${{product.sale_price}}.00</h4></b>
+      </ng-template>
+      <h4><b>Metal:</b> {{product.metal}}</h4>
+      <p><b>{{product.title}}</b> - {{product.desc}}</p>
+    </div>
+    <div class="buttons">
+      <button><i class="fas fa-shopping-basket"></i> Add to cart</button>
+      <button><i class="far fa-heart"></i> Add to wishlist</button>
+    </div>
+    <div class="categories">
+      <h6><b>Categories:</b></h6>
+      <h6> <a [routerLink]='["/shop"]' *ngFor="let category of product.categories"> {{category}}</a></h6>
+    </div>
+  </section>
+</section>
+
+<!-- <section class="hot">
+  <h4>Related Products</h4>
+  <div class="hot-offers">
+    <div class="col-lg-3 col-md-3 mb-5 col-sm-5" *ngFor="let product of products | slice:  0:4" >
+      <app-products-list [product]="product"></app-products-list>
+    </div>
+  </div>
+</section> -->
