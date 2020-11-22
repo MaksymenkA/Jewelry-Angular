@@ -12,8 +12,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 
 })
 export class MainComponent implements OnInit {
-  hotProducts: Product[] = [];
-  specialProducts: Product[] = [];
+  products: Product[] = [];
   slideOptions = {
     responsiveClass: true,
     stagePadding: 23,
@@ -56,8 +55,7 @@ export class MainComponent implements OnInit {
     // this.productService.onCreateProducts();
     this.productService.onFetchProducts()
       .subscribe(data => {
-        this.specialProducts = Object.values(data)['1'];
-        this.hotProducts = Object.values(data)['0'];
+     this.products = data;
       });
 
   }

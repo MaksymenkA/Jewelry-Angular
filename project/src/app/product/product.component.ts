@@ -16,8 +16,14 @@ export class ProductComponent implements OnInit {
   id: number;
   product: Product;
   first_image: any;
-  second_image:any;
+  second_image: any;
   products: Product[] = [];
+  title:string;
+  old_price:number;
+  price:number;
+  desc:string;
+  metal:string;
+  categories:string[] = [];
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[] = [];
@@ -25,12 +31,16 @@ export class ProductComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) {
     this.route.params.subscribe(params => this.id = params['id']);
     this.productService.onFetchProducts().subscribe(data => {
-      for (let i of Object.values(data)) {
-        this.products = this.products.concat(i);
-      }
-      this.product = this.products.find(x => x.id == this.id);
+      this.product = data[this.id - 1];
       this.first_image = this.product['first_image'];
       this.second_image = this.product['second_image'];
+      this.title = this.product['title'];
+      this.old_price = this.product['old_price'];
+      this.price = this.product['price'];
+      this.desc = this.product['desc'];
+      this.metal = this.product['metal'];
+      this.categories = this.product['categories'];
+
     });
   }
 
@@ -70,7 +80,7 @@ export class ProductComponent implements OnInit {
           medium: this.second_image,
           big: this.second_image
         },
-      ]
-    }, 700);
+      ];
+    }, 1000);
   }
 }

@@ -11,13 +11,11 @@
   </a>
   <div>
     <h6 class="mt-1">
-      <a *ngFor="let category of product.categories">{{category}}</a>
+      <a *ngFor="let category of product.categories" [routerLink]="['/shop', category|lowercase]" >{{category}}</a>
     </h6>
     <p class="mb-1">{{product.title}}</p>
-    <h6 *ngIf="product.sale_price==0; else saleData"> ${{product.price}}.00</h6>
-    <ng-template #saleData>
-      <h6><del>${{product.price}}.00</del> ${{product.sale_price}}.00</h6>
-    </ng-template>
+    <h6 ><del *ngIf="product.old_price!==0; else noData">${{product.old_price}}.00</del> ${{product.price}}.00</h6>
+    <ng-template #noData></ng-template>
   </div>
 </div>
 

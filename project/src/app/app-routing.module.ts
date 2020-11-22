@@ -13,6 +13,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'shop/:filterName', component: ShopComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'services', component: ServicesComponent },

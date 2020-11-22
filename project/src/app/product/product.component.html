@@ -1,17 +1,14 @@
-
 <section class="product-details ">
   <div class="gallery-wrapper col-lg-6 col-md-6">
     <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
   </div>
   <section class="info-section col-lg-6 col-md-6">
     <div>
-      <h4 class="text-uppercase"><b>{{product.title}}</b></h4>
-      <h4 *ngIf="product.sale_price==0; else saleData"> <b>${{product.price}}.00</b></h4>
-      <ng-template #saleData>
-       <b> <h4><del>${{product.price}}.00</del> ${{product.sale_price}}.00</h4></b>
-      </ng-template>
-      <h4><b>Metal:</b> {{product.metal}}</h4>
-      <p><b>{{product.title}}</b> - {{product.desc}}</p>
+      <h4 class="text-uppercase"><b>{{title}}</b></h4>
+      <h4><del *ngIf="old_price!==0; else noData">${{old_price}}.00</del> ${{price}}.00</h4>
+      <ng-template #noData></ng-template>
+      <h4><b>Metal:</b> {{metal}}</h4>
+      <p><b>{{title}}</b> - {{desc}}</p>
     </div>
     <div class="buttons">
       <button><i class="fas fa-shopping-basket"></i> Add to cart</button>
@@ -19,7 +16,7 @@
     </div>
     <div class="categories">
       <h6><b>Categories:</b></h6>
-      <h6> <a [routerLink]='["/shop"]' *ngFor="let category of product.categories"> {{category}}</a></h6>
+      <h6> <a [routerLink]='["/shop", category.toLowerCase()]' *ngFor="let category of categories"> {{category}}</a></h6>
     </div>
   </section>
 </section>

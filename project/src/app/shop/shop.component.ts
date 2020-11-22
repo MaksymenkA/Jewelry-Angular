@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { ProductService } from './../product/product.service';
 import { Product } from './../product/product.module';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { LabelType, Options } from 'ng5-slider';
 import duplicates from 'find-array-duplicates';
 import { title } from 'process';
 import { first } from 'rxjs/operators';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -13,11 +15,14 @@ import { first } from 'rxjs/operators';
 })
 export class ShopComponent implements OnInit {
   products: Product[] = [];
-  uniqueProducts: Product[] = [];
-
   currentPage = 1;
   itemsPerPage = 6;
   pageSize: number;
+
+  categoryNames = [{ name: 'Bracelets', checked: false }, { name: 'Bridal', checked: false }, { name: 'Earrings', checked: false }, { name: 'Necklaces', checked: false }, { name: 'Rings', checked: false }];
+  filterName: string;
+  inputNames = new Set<string>();
+  isChecked: boolean;
 
   minValue: number = 0;
   maxValue: number = 500;
@@ -35,22 +40,32 @@ export class ShopComponent implements OnInit {
       }
     }
   };
-  constructor(public productService: ProductService) { }
+  constructor(public productService: ProductService, public router: Router, public route: ActivatedRoute) {
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+
+  }
 
   ngOnInit(): void {
+
+    this.route.params.subscribe(params => this.filterName = params['filterName']);
+    if (this.filterName !== "") {
+      this.inputNames.add(this.filterName);
+      this.categoryNames.forEach(element => {
+        if (element.name.toLowerCase() === this.filterName) {
+          element.checked = true;
+        }
+      });
+    }
+
     this.productService.onFetchProducts()
       .subscribe(data => {
-        for (let i of Object.values(data)) {
-          this.products = this.products.concat(i);
-        }
-        this.uniqueProducts = this.products.reduce((arr, item) => {
-          let exists = !!arr.find(x => x.title === item.title);
-          if (!exists) {
-            arr.push(item);
-          }
-          return arr;
-        }, []);
+        this.products = data;
       });
+
 
   }
 
@@ -60,5 +75,34 @@ export class ShopComponent implements OnInit {
 
   }
 
+  sortItemsByInputName(event, name) {
+    this.inputNames = this.inputNames.add((name).toLowerCase());
+    if (event.target.checked === false) {
+      this.inputNames.delete((name).toLowerCase());
+    }
+  }
+  sortByPrice(event) {
+
+    if (event == 1) {
+      this.productService.onFetchProducts()
+      .subscribe(data => {
+        this.products = data;
+      });
+
+      return this.products;
+    }
+    else if (event == 2) {
+      this.products.sort(function (a, b) {
+        return a.price - b.price;
+      });
+    } else if (event == 3) {
+      this.products.sort(function (a, b) {
+        return b.price - a.price;
+      });
+    }
+
+    console.log(this.products);
+
+  }
 
 }

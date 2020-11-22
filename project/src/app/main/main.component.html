@@ -7,7 +7,7 @@
         <div class="slider-content">
           <h1>{{slide.title}}</h1>
           <p>{{slide.desc}}</p>
-          <button routerLink="/shop">Discover now</button>
+          <button [routerLink]='["/shop"]'>Discover now</button>
         </div>
       </div>
     </div>
@@ -16,27 +16,27 @@
 
 <!-- Categories -->
 <section class="categories">
-  <a href="" class="col-lg-3 p-0 col-md-6">
+  <a [routerLink]='["/shop", "earrings"]' class="col-lg-3 p-0 col-md-6">
     <img src="../../assets/category1.png" alt="">
     <h4 id="earrings-C">Earrings</h4>
   </a>
-  <a href="" class="col-lg-3 p-0 col-md-6">
+  <a [routerLink]='["/shop", "bracelets"]' class="col-lg-3 p-0 col-md-6">
     <img src="../../assets/category2.png" alt="">
     <h4 id="bracelets-C">Bracelets</h4>
   </a>
-  <a href="" class="col-lg-6 p-0">
+  <a [routerLink]='["/shop", "necklaces"]' class="col-lg-6 p-0">
     <img src="../../assets/category3.png" alt="">
     <h4 id="necklaces-C">Necklaces</h4>
   </a>
-  <a href="" class="col-lg-3 p-0 col-md-6">
+  <a [routerLink]='["/shop", "rings"]' class="col-lg-3 p-0 col-md-6">
     <img src="../../assets/category4.png" alt="">
     <h4 id="rings-C">Rings</h4>
   </a>
-  <a href="" class="col-lg-6 p-0 clearance">
+  <a [routerLink]='["/shop"]' class="col-lg-6 p-0 clearance">
     <img src="../../assets/category5.png" alt="">
     <h4 id="clearance-C">Clearance</h4>
   </a>
-  <a href="" class="col-lg-3 p-0 col-md-6 pendants">
+  <a [routerLink]='["/shop", "pendants"]' class="col-lg-3 p-0 col-md-6 pendants">
     <img src="../../assets/category6.png" alt="">
     <h4 id="pendants-C">Pendants</h4>
   </a>
@@ -46,7 +46,7 @@
 <section class="hot">
   <h4>What`s hot</h4>
   <div class="hot-offers">
-    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of hotProducts" >
+    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of products |slice: 0:6" >
       <app-products-list [product]="product"></app-products-list>
     </div>
   </div>
@@ -55,10 +55,10 @@
 <!-- Banners -->
 <section class="banners mb-5 ">
   <div class="col-lg-6 col-md-6">
-    <a href=""><img src="../../assets/07.png" alt=""></a>
+    <a [routerLink]='["/shop"]'><img src="../../assets/07.png" alt=""></a>
   </div>
   <div class="col-lg-6 col-md-6">
-    <a href=""> <img src="../../assets/08.png" alt="" style="overflow: hidden;"></a>
+    <a [routerLink]='["/shop"]'> <img src="../../assets/08.png" alt="" style="overflow: hidden;"></a>
   </div>
 </section>
 
@@ -66,7 +66,7 @@
 <section class="hot">
   <h4>Special</h4>
   <div class="hot-offers">
-    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of specialProducts" >
+    <div class="col-lg-2 col-md-4 mb-5 col-sm-5" *ngFor="let product of products |slice: 6  |slice: 0:6" >
       <app-products-list [product]="product"></app-products-list>
     </div>
   </div>
@@ -81,7 +81,7 @@
     <h2>DISCOVERING CAHNTALLE COLLECTION​</h2>
     <p>Dreaming on perfect jewelry to complete your look? Chatalle has everything and even more for you!
       Find your perfect item and wear it with pleasure!</p>
-    <button>Discover now</button>
+    <button [routerLink]='["/shop"]'>Discover now</button>
   </div>
 </section>
 
@@ -110,10 +110,10 @@
 <!-- Banners -->
 <section class="banners mb-5 ">
   <div class="col-lg-6 col-md-6">
-    <a href=""><img src="../../assets/09.png" alt=""></a>
+    <a [routerLink]='["/shop"]'><img src="../../assets/09.png" alt=""></a>
   </div>
   <div class="col-lg-6 col-md-6">
-    <a href=""> <img src="../../assets/10.png" alt="" style="overflow: hidden;"></a>
+    <a [routerLink]='["/shop"]'> <img src="../../assets/10.png" alt="" style="overflow: hidden;"></a>
   </div>
 </section>
 

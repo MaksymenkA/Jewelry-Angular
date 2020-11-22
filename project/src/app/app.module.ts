@@ -21,6 +21,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ServicesComponent } from './services/services.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.compon
     BlogComponent,
     ServicesComponent,
     GalleryComponent,
-    GalleryItemComponent
+    GalleryItemComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
