@@ -1,11 +1,8 @@
-import { element } from 'protractor';
 import { ProductService } from './../product/product.service';
 import { Product } from './../product/product.module';
 import { Component, OnInit } from '@angular/core';
 import { LabelType, Options } from 'ng5-slider';
-import duplicates from 'find-array-duplicates';
-import { title } from 'process';
-import { first } from 'rxjs/operators';
+
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -19,7 +16,12 @@ export class ShopComponent implements OnInit {
   itemsPerPage = 6;
   pageSize: number;
 
-  categoryNames = [{ name: 'Bracelets', checked: false }, { name: 'Bridal', checked: false }, { name: 'Earrings', checked: false }, { name: 'Necklaces', checked: false }, { name: 'Rings', checked: false }];
+  categoryNames = [{ name: 'Bracelets', checked: false },
+  { name: 'Bridal', checked: false },
+  { name: 'Earrings', checked: false },
+  { name: 'Necklaces', checked: false },
+  { name: 'Rings', checked: false }];
+
   filterName: string;
   inputNames = new Set<string>();
   isChecked: boolean;
@@ -40,19 +42,19 @@ export class ShopComponent implements OnInit {
       }
     }
   };
+
   constructor(public productService: ProductService, public router: Router, public route: ActivatedRoute) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         window.scrollTo(0, 0);
       }
     });
-
   }
-
   ngOnInit(): void {
-
     this.route.params.subscribe(params => this.filterName = params['filterName']);
-    if (this.filterName !== "") {
+    this.displayingOfProducts();
+
+    if (this.filterName !== "" && this.filterName !== undefined) {
       this.inputNames.add(this.filterName);
       this.categoryNames.forEach(element => {
         if (element.name.toLowerCase() === this.filterName) {
@@ -60,49 +62,66 @@ export class ShopComponent implements OnInit {
         }
       });
     }
+  }
+
+  displayingOfProducts() {
 
     this.productService.onFetchProducts()
       .subscribe(data => {
+        let counter = 0;
         this.products = data;
+        if (this.inputNames.size !== 0) {
+          if (this.filterName !== "" && this.filterName !== undefined) {
+            this.products.forEach(element => {
+              if (element.categories.includes((this.filterName).charAt(0).toUpperCase() + this.filterName.substring(1))) {
+                this.products.push(element);
+                counter++;
+              }
+              this.products = (this.products.reverse()).slice(0, counter);
+            });
+          }
+        }
+        console.log(this.inputNames);
+
       });
-
-
   }
-
   public onPageChange(pageNum: number): void {
     this.pageSize = this.itemsPerPage * (pageNum - 1);
     document.documentElement.scrollTop = 0;
-
   }
 
   sortItemsByInputName(event, name) {
     this.inputNames = this.inputNames.add((name).toLowerCase());
+    console.log("Added");
+
     if (event.target.checked === false) {
       this.inputNames.delete((name).toLowerCase());
+      console.log("Deleted");
+      this.displayingOfProducts();
     }
+    // this.categoryNames.forEach(element => {
+    //   if (element.name.toLowerCase() === this.filterName) {
+    //     element.checked = true;
+    //   }
+    // });
   }
+
   sortByPrice(event) {
 
-    if (event == 1) {
-      this.productService.onFetchProducts()
-      .subscribe(data => {
-        this.products = data;
-      });
+    this.currentPage = 1;
+    this.pageSize = 0;
 
-      return this.products;
+    if (event === '1') {
+      this.displayingOfProducts();
     }
-    else if (event == 2) {
+    else if (event === '2') {
       this.products.sort(function (a, b) {
         return a.price - b.price;
       });
-    } else if (event == 3) {
+    } else if (event === '3') {
       this.products.sort(function (a, b) {
         return b.price - a.price;
       });
     }
-
-    console.log(this.products);
-
   }
-
 }

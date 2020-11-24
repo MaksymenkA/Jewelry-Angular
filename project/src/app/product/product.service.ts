@@ -1,6 +1,7 @@
 import { Product } from './product.module';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { take } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -108,6 +109,9 @@ export class ProductService {
     return this.http.get<Product[]>('https://jewelry-8e883.firebaseio.com/products.json');
   }
   orderByProductsPrice() {
-    return this.http.get<Product>(`https://jewelry-8e883.firebaseio.com/products.json?orderBy="price"`);
+    return this.http.get<Product[]>(`https://jewelry-8e883.firebaseio.com/products.json?orderBy="price"`);
+  }
+  getSelectedRecipe(id){
+    return this.http.get<Product>(`https://jewelry-8e883.firebaseio.com/products.json?orderBy="id"&startAt=${id}&endAt=${id}`);
   }
 }

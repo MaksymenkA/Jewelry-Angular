@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 import { NgxGalleryAnimation } from '@kolkov/ngx-gallery';
+import { first, take } from 'rxjs/operators';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -18,19 +19,19 @@ export class ProductComponent implements OnInit {
   first_image: any;
   second_image: any;
   products: Product[] = [];
-  title:string;
-  old_price:number;
-  price:number;
-  desc:string;
-  metal:string;
-  categories:string[] = [];
+  title: string;
+  old_price: number;
+  price: number;
+  desc: string;
+  metal: string;
+  categories: string[] = [];
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[] = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) {
     this.route.params.subscribe(params => this.id = params['id']);
-    this.productService.onFetchProducts().subscribe(data => {
+    this.productService.getSelectedRecipe(this.id).subscribe(data => {
       this.product = data[this.id - 1];
       this.first_image = this.product['first_image'];
       this.second_image = this.product['second_image'];
@@ -40,8 +41,8 @@ export class ProductComponent implements OnInit {
       this.desc = this.product['desc'];
       this.metal = this.product['metal'];
       this.categories = this.product['categories'];
-
     });
+
   }
 
   ngOnInit(): void {
